@@ -1,0 +1,69 @@
+<?php
+
+namespace App\Filament\Resources;
+
+use App\Filament\Resources\FRDoorAssyRHResource\Pages;
+use App\Filament\Resources\FRDoorAssyRHResource\RelationManagers;
+use App\Models\fr_door_assy_rh;
+use App\Models\FRDoorAssyRH;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+
+class FRDoorAssyRHResource extends Resource
+{
+    protected static ?string $model = fr_door_assy_rh::class;
+
+    // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'FG Module';
+    protected static ?string $navigationLabel = 'FR Door Assy RH';
+    protected static ?string $modelLabel = 'FR Door Assy RH';
+    protected static ?int $navigationSort = 14;
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                //
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                //
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListFRDoorAssyRHS::route('/'),
+            'create' => Pages\CreateFRDoorAssyRH::route('/create'),
+            'edit' => Pages\EditFRDoorAssyRH::route('/{record}/edit'),
+        ];
+    }
+}
