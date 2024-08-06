@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('rear_door_assy_rhs', function (Blueprint $table) {
             $table->id();
+            $table->string('part_number');
             $table->string('subcategory');
             $table->timestamps();
         });

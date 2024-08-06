@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('engine_room_assies', function (Blueprint $table) {
             $table->id();
+            $table->string('part_number');
             $table->string('subcategory');
             $table->timestamps();
         });

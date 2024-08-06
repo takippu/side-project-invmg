@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('side_body_lhs', function (Blueprint $table) {
             $table->id();
+            $table->string('part_number');
             $table->string('subcategory');
             $table->timestamps();
         });

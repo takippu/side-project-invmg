@@ -42,6 +42,29 @@ class DatabaseSeeder extends Seeder
             'HARN ASSY-ANTISKID & PKB,RH',
             'HARN ASSY-ANTISKID & PKB,LH',
         ];
+        $cat1partno = [
+            '43202W000PV1',
+            '4120A266',
+            '4140A490',
+            'MF911953V',
+            'MR129462',
+            '4140A491',
+            'MB631529',
+            '4615A245',
+            'MB515405',
+            '44010W000P',
+            '44000W000P',
+            '55019W020P',
+            'MF911233V1',
+            '46287W000P',
+            '46286W000P',
+            '46211W060P',
+            '46210W050P',
+            'MF911242V1',
+            'MF911142V1',
+            '479A6W000P',
+            '479A7W000P',
+        ];
         $cat2 = [
             'PAD, SPRING LOWER',
             'STOPPER, F/SUSP BUMP',
@@ -487,8 +510,11 @@ class DatabaseSeeder extends Seeder
             'HOSE (310)'
         ];
         DB::table('rr_crossmembers')->insert(
-            array_map(function ($cat1) {
-                return ['subcategory' => $cat1];
+            array_map(function ($cat1,$cat1partno) {
+                return [
+                    'subcategory' => $cat1,
+                    'part_number' => $cat1partno,
+                ];
             }, $cat1)
         );
         DB::table('fr_strut_rhs')->insert(
