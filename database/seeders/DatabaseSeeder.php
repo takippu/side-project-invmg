@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
             'MF911242V1',
             'MF911142V1',
             '479A6W000P',
-            '479A7W000P',
+            '479A7W000P'
         ];
         $cat2 = [
             'PAD, SPRING LOWER',
@@ -510,98 +510,99 @@ class DatabaseSeeder extends Seeder
             'HOSE (310)'
         ];
         DB::table('rr_crossmembers')->insert(
-            array_map(function ($cat1,$cat1partno) {
+            array_map(function ($cat1, $cat1partno) {
                 return [
                     'subcategory' => $cat1,
-                    'part_number' => $cat1partno,
+                    'part_number' => $cat1partno
                 ];
-            }, $cat1)
+            }, $cat1, $cat1partno)
         );
-        DB::table('fr_strut_rhs')->insert(
-            array_map(function ($cat2) {
-                return ['subcategory' => $cat2];
-            }, $cat2)
-        );
-        DB::table('fr_strut_lhs')->insert(
-            array_map(function ($cat3) {
-                return ['subcategory' => $cat3];
-            }, $cat3)
-        );
-        DB::table('fr_drivetrain_assies')->insert(
-            array_map(function ($cat4) {
-                return ['subcategory' => $cat4];
-            }, $cat4)
-        );
-        DB::table('roof_assies')->insert(
-            array_map(function ($cat5) {
-                return ['subcategory' => $cat5];
-            }, $cat5)
-        );
-        DB::table('roof_rail_assies')->insert(
-            array_map(function ($cat6) {
-                return ['subcategory' => $cat6];
-            }, $cat6)
-        );
-        DB::table('rear_floor_assies')->insert(
-            array_map(function ($cat7) {
-                return ['subcategory' => $cat7];
-            }, $cat7)
-        );
-        DB::table('front_floor_assies')->insert(
-            array_map(function ($cat8) {
-                return ['subcategory' => $cat8];
-            }, $cat8)
-        );
-        DB::table('engine_room_assies')->insert(
-            array_map(function ($cat9) {
-                return ['subcategory' => $cat9];
-            }, $cat9)
-        );
-        DB::table('side_body_rhs')->insert(
-            array_map(function ($cat10) {
-                return ['subcategory' => $cat10];
-            }, $cat10)
-        );
-        DB::table('side_body_lhs')->insert(
-            array_map(function ($cat11) {
-                return ['subcategory' => $cat11];
-            }, $cat11)
-        );
-        DB::table('ipnl_assies')->insert(
-            array_map(function ($cat12) {
-                return ['subcategory' => $cat12];
-            }, $cat12)
-        );
-        DB::table('fr_door_assy_lhs')->insert(
-            array_map(function ($cat13) {
-                return ['subcategory' => $cat13];
-            }, $cat13)
-        );
-        DB::table('fr_door_assy_rhs')->insert(
-            array_map(function ($cat14) {
-                return ['subcategory' => $cat14];
-            }, $cat14)
-        );
-        DB::table('rear_door_assy_lhs')->insert(
-            array_map(function ($cat15) {
-                return ['subcategory' => $cat15];
-            }, $cat15)
-        );
-        DB::table('rear_door_assy_rhs')->insert(
-            array_map(function ($cat16) {
-                return ['subcategory' => $cat16];
-            }, $cat16)
-        );
-        DB::table('hydraulic_unit_assies')->insert(
-            array_map(function ($cat17) {
-                return ['subcategory' => $cat17];
-            }, $cat17)
-        );
-        DB::table('radiator_assies')->insert(
-            array_map(function ($cat18) {
-                return ['subcategory' => $cat18];
-            }, $cat18)
-        );
+        
+        // DB::table('fr_strut_rhs')->insert(
+        //     array_map(function ($cat2) {
+        //         return ['subcategory' => $cat2];
+        //     }, $cat2)
+        // );
+        // DB::table('fr_strut_lhs')->insert(
+        //     array_map(function ($cat3) {
+        //         return ['subcategory' => $cat3];
+        //     }, $cat3)
+        // );
+        // DB::table('fr_drivetrain_assies')->insert(
+        //     array_map(function ($cat4) {
+        //         return ['subcategory' => $cat4];
+        //     }, $cat4)
+        // );
+        // DB::table('roof_assies')->insert(
+        //     array_map(function ($cat5) {
+        //         return ['subcategory' => $cat5];
+        //     }, $cat5)
+        // );
+        // DB::table('roof_rail_assies')->insert(
+        //     array_map(function ($cat6) {
+        //         return ['subcategory' => $cat6];
+        //     }, $cat6)
+        // );
+        // DB::table('rear_floor_assies')->insert(
+        //     array_map(function ($cat7) {
+        //         return ['subcategory' => $cat7];
+        //     }, $cat7)
+        // );
+        // DB::table('front_floor_assies')->insert(
+        //     array_map(function ($cat8) {
+        //         return ['subcategory' => $cat8];
+        //     }, $cat8)
+        // );
+        // DB::table('engine_room_assies')->insert(
+        //     array_map(function ($cat9) {
+        //         return ['subcategory' => $cat9];
+        //     }, $cat9)
+        // );
+        // DB::table('side_body_rhs')->insert(
+        //     array_map(function ($cat10) {
+        //         return ['subcategory' => $cat10];
+        //     }, $cat10)
+        // );
+        // DB::table('side_body_lhs')->insert(
+        //     array_map(function ($cat11) {
+        //         return ['subcategory' => $cat11];
+        //     }, $cat11)
+        // );
+        // DB::table('ipnl_assies')->insert(
+        //     array_map(function ($cat12) {
+        //         return ['subcategory' => $cat12];
+        //     }, $cat12)
+        // );
+        // DB::table('fr_door_assy_lhs')->insert(
+        //     array_map(function ($cat13) {
+        //         return ['subcategory' => $cat13];
+        //     }, $cat13)
+        // );
+        // DB::table('fr_door_assy_rhs')->insert(
+        //     array_map(function ($cat14) {
+        //         return ['subcategory' => $cat14];
+        //     }, $cat14)
+        // );
+        // DB::table('rear_door_assy_lhs')->insert(
+        //     array_map(function ($cat15) {
+        //         return ['subcategory' => $cat15];
+        //     }, $cat15)
+        // );
+        // DB::table('rear_door_assy_rhs')->insert(
+        //     array_map(function ($cat16) {
+        //         return ['subcategory' => $cat16];
+        //     }, $cat16)
+        // );
+        // DB::table('hydraulic_unit_assies')->insert(
+        //     array_map(function ($cat17) {
+        //         return ['subcategory' => $cat17];
+        //     }, $cat17)
+        // );
+        // DB::table('radiator_assies')->insert(
+        //     array_map(function ($cat18) {
+        //         return ['subcategory' => $cat18];
+        //     }, $cat18)
+        // );
 
 
     }

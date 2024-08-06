@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('inventory_items', function (Blueprint $table) {
             $table->id();
             $table->string('subcategory_id');
+            $table->string('maincategory_id');
+            $table->string('part_number');
             $table->string('lot_number');
             $table->string('name');
             $table->string('quantity');
+            $table->text('remarks');
             $table->timestamps();
 
         });
